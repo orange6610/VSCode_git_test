@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字</title>
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var min = prompt("请输入猜测范围的最小值");
+        var max = prompt("请输入猜测范围的最大值");
+        alert("正在生成随机数~");
+        var random = getRandom(min - 0, max - 0);
+        console.log(random);
+        console.log('\n');
+        var i = prompt("请输入猜测次数：");
+
+        while (i--) {
+            var guess = prompt("请猜数字：")
+            if (guess < random) {
+                alert("小了");
+            }
+            else if (guess > random) {
+                alert("大了");
+            }
+            else {
+                alert("猜对了");
+                break;
+            }
+        }
+        if (i < 0) alert("次数用完，游戏失败~");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
